@@ -26,6 +26,10 @@
 		0DD42D262B48A1FB00333DC7 /* CountriesListViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD42D252B48A1FB00333DC7 /* CountriesListViewType.swift */; };
 		0DD42D282B48A51800333DC7 /* CountriesListViewControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD42D272B48A51800333DC7 /* CountriesListViewControllerType.swift */; };
 		0DD42D2A2B48A56300333DC7 /* CountriesListPresenterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD42D292B48A56300333DC7 /* CountriesListPresenterType.swift */; };
+		0DD42D2C2B49ADD800333DC7 /* CountriesListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD42D2B2B49ADD800333DC7 /* CountriesListPresenter.swift */; };
+		0DD42D2E2B49AE4B00333DC7 /* CountryServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD42D2D2B49AE4B00333DC7 /* CountryServiceType.swift */; };
+		0DD42D302B49AF9E00333DC7 /* CountryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD42D2F2B49AF9E00333DC7 /* CountryRepository.swift */; };
+		0DD42D322B49AFCA00333DC7 /* ServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD42D312B49AFCA00333DC7 /* ServiceType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +54,10 @@
 		0DD42D252B48A1FB00333DC7 /* CountriesListViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListViewType.swift; sourceTree = "<group>"; };
 		0DD42D272B48A51800333DC7 /* CountriesListViewControllerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListViewControllerType.swift; sourceTree = "<group>"; };
 		0DD42D292B48A56300333DC7 /* CountriesListPresenterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListPresenterType.swift; sourceTree = "<group>"; };
+		0DD42D2B2B49ADD800333DC7 /* CountriesListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListPresenter.swift; sourceTree = "<group>"; };
+		0DD42D2D2B49AE4B00333DC7 /* CountryServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryServiceType.swift; sourceTree = "<group>"; };
+		0DD42D2F2B49AF9E00333DC7 /* CountryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryRepository.swift; sourceTree = "<group>"; };
+		0DD42D312B49AFCA00333DC7 /* ServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +123,7 @@
 		0DD42D0B2B487D6800333DC7 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
+				0DD42D2B2B49ADD800333DC7 /* CountriesListPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -127,6 +136,8 @@
 				0DD42D252B48A1FB00333DC7 /* CountriesListViewType.swift */,
 				0DD42D272B48A51800333DC7 /* CountriesListViewControllerType.swift */,
 				0DD42D292B48A56300333DC7 /* CountriesListPresenterType.swift */,
+				0DD42D2D2B49AE4B00333DC7 /* CountryServiceType.swift */,
+				0DD42D312B49AFCA00333DC7 /* ServiceType.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -134,6 +145,7 @@
 		0DD42D0D2B487D7500333DC7 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				0DD42D2F2B49AF9E00333DC7 /* CountryRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -239,12 +251,16 @@
 				0DD42D242B48A18800333DC7 /* CountriesListViewControllerDelegate.swift in Sources */,
 				0DD42D142B487DDD00333DC7 /* ListedCountry.swift in Sources */,
 				0DD42D1D2B488C0900333DC7 /* MainCoordinator.swift in Sources */,
+				0DD42D2E2B49AE4B00333DC7 /* CountryServiceType.swift in Sources */,
 				0DD42D1A2B48876600333DC7 /* CountryInformations.swift in Sources */,
 				0DD42D102B487D8A00333DC7 /* CountriesResponse.swift in Sources */,
+				0DD42D2C2B49ADD800333DC7 /* CountriesListPresenter.swift in Sources */,
 				0DD42D1F2B488C5900333DC7 /* Coordinator.swift in Sources */,
+				0DD42D302B49AF9E00333DC7 /* CountryRepository.swift in Sources */,
 				0DD42D282B48A51800333DC7 /* CountriesListViewControllerType.swift in Sources */,
 				0DD42D2A2B48A56300333DC7 /* CountriesListPresenterType.swift in Sources */,
 				0DD42CF72B487C7E00333DC7 /* AppDelegate.swift in Sources */,
+				0DD42D322B49AFCA00333DC7 /* ServiceType.swift in Sources */,
 				0DD42D122B487DC200333DC7 /* State.swift in Sources */,
 				0DD42CF92B487C7E00333DC7 /* SceneDelegate.swift in Sources */,
 				0DD42D162B487F2000333DC7 /* CountryLocation.swift in Sources */,

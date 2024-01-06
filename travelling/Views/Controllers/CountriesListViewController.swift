@@ -72,7 +72,7 @@ extension CountriesListViewController {
 
 extension CountriesListViewController: CountriesListViewControllerType {
     func show(with state: State) {
-        
+        contentView.updateContent(state: state)
     }
 }
 
