@@ -10,6 +10,7 @@ final class CountriesListPresenter: CountriesListPresenterType {
     weak var viewController: CountriesListViewControllerType?
     private var repository: CountryRepositoryType
     private(set) var filteredCountries: [ListedCountry] = []
+    private var countries: [ListedCountry] = []
 
 
     init(repository: CountryRepositoryType = CountryRepository()) {
@@ -21,9 +22,14 @@ final class CountriesListPresenter: CountriesListPresenterType {
         repository.getCountries() {
             [weak self] result in
             switch result {
-            case .success(let response):
-                
-            case .failure(_):
+                case .success(let response):
+                let countries = response.map {
+                    ListedCountry(name: $0.name, url: $0.url)
+                }
+                self?.filteredCountries = countries
+                self?.countries = countries
+                self?.viewController?.show(with: .read)
+                case .failure(_):
                 self?.viewController?.show(with: .error)
             }
             
@@ -31,19 +37,25 @@ final class CountriesListPresenter: CountriesListPresenterType {
     }
     
     func handleSearch(with content: String) {
-        <#code#>
+        if content.isEmpty {
+            filteredCountries = countries
+        } else {
+            filteredCountries = countries.filter {
+                $0.name.uppercased().contains(content.uppercased())
+            }
+        }
     }
     
     func numberOfRowsInSection() -> Int {
-        <#code#>
+        filteredCountries.count
     }
     
     func countryName(of row: Int) -> String {
-        <#code#>
+        filteredCountries[row].name
     }
     
     func countryURL(of row: Int) -> URL {
-        <#code#>
+        filteredCountries[row].url
     }
     
     

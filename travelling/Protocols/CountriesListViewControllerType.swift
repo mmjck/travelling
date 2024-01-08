@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import UIKit
 
 protocol CountriesListViewControllerType where Self: UIViewController {
     func show(with state: State)

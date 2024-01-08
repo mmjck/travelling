@@ -15,10 +15,10 @@ final class CountriesListViewController: UIViewController {
     
     weak var delegate: CountriesListViewControllerDelegate?
     
-    init(contentView: CountriesListViewType, delegate: CountriesListViewControllerDelegate? = nil) {
+    init(contentView: CountriesListViewType = CountriesListView(),
+        presenter: CountriesListPresenterType = CountriesListPresenter()) {
         self.contentView = contentView
-        self.delegate = delegate
-        
+        self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
         self.presenter.viewController = self
 
@@ -27,8 +27,6 @@ final class CountriesListViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
     
     override func loadView() {
         self.view = contentView

@@ -9,8 +9,7 @@ import Foundation
 import UIKit
 
 final class MainCoordinator: Coordinator {
-    
-    weak var currentcontroller: UIViewController?
+    weak var currentController: UIViewController?
     var navigationController: UINavigationController
     
     init(navigationController: UINavigationController){
@@ -19,9 +18,8 @@ final class MainCoordinator: Coordinator {
     
     func start() {
         let viewController = CountriesListViewController()
-        
         viewController.delegate = self
-        currentcontroller = viewController
+        currentController = viewController
         navigationController.pushViewController(viewController , animated: true)
     }
 }
@@ -29,11 +27,11 @@ final class MainCoordinator: Coordinator {
 
 extension MainCoordinator: CountriesListViewControllerDelegate {
     func goToInformations(with country: ListedCountry) {
-        let presenter = CountryInformationsPresenter(country: country)
-        let viewController = CountryInformationsViewController(presenter: presenter)
-        presenter.viewController = viewController
-        currentController = viewController
-        navigationController.pushViewController(viewController, animated: true)
+//        let presenter = CountryInformationsPresenter(country: country)
+//        let viewController = CountryInformationsViewController(presenter: presenter)
+//        presenter.viewController = viewController
+//        currentController = viewController
+//        navigationController.pushViewController(viewController, animated: true)
     }
 }
 
