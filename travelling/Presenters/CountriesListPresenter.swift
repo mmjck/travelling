@@ -18,19 +18,24 @@ final class CountriesListPresenter: CountriesListPresenterType {
     }
     
     func requestContries() {
+        
         viewController?.show(with: .loading)
+        print("called")
         repository.getCountries() {
             [weak self] result in
             switch result {
                 case .success(let response):
-                let countries = response.map {
-                    ListedCountry(name: $0.name, url: $0.url)
-                }
-                self?.filteredCountries = countries
-                self?.countries = countries
-                self?.viewController?.show(with: .read)
-                case .failure(_):
-                self?.viewController?.show(with: .error)
+                    
+                    let countries = response.map {
+                        ListedCountry(name: $0.name, url: $0.url)
+                    }
+                    self?.filteredCountries = countries
+                    self?.countries = countries
+                    self?.viewController?.show(with: .read)
+                    print("called")
+                case .failure(let error):
+                    print(error)
+                    self?.viewController?.show(with: .error)
             }
             
         }
