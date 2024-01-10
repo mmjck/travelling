@@ -7,6 +7,8 @@
 
 import Foundation
 import UIKit
+import MapKit
+
 
 final class MapHeader: UITableViewHeaderFooterView {
     static var id: String {
@@ -40,5 +42,12 @@ final class MapHeader: UITableViewHeaderFooterView {
         mapView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0).isActive = true
         mapView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0).isActive = true
         mapView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0).isActive = true
+    }
+    
+    func add(location: CountryLocation) {
+        let span = MKCoordinateSpan.init(latitudeDelta: 30, longitudeDelta: 30)
+        let region = MKCoordinateRegion.init(center: location.coordinate, span: span)
+        mapView.setRegion(region, animated: true)
+        mapView.addAnnotation(location)
     }
 }

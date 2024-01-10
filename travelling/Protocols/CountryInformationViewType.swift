@@ -6,8 +6,8 @@
 //
 
 import Foundation
-
-protocol CountryInformationViewType: AnyObject {
+import UIKit
+protocol CountryInformationViewType where Self: UIView {
     func updateContent(state: State)
     var getTitle: ((Int) -> String)? { get set }
     var getDetail: ((Int) -> String)? { get set }

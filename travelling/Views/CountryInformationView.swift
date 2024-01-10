@@ -12,6 +12,7 @@ final class CountryInformationView: UIView {
     var getTitle: ((Int) -> String)?
     var getDetail: ((Int) -> String)?
     var getLocation: (() -> CountryLocation)?
+    private let dataSourceDelegate: CountryInformationsDataSourceType
     
     
     private let tableView: UITableView = {
@@ -45,5 +46,29 @@ final class CountryInformationView: UIView {
             tableView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
             tableView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor)
         ])
+    }
+}
+
+
+extension CountryInformationView: CountryInformationViewType {
+    func setupTableView() {
+        dataSourceDelegate.getLocation = getLocation
+        dataSourceDelegate.getTitle = getTitle
+        dataSourceDelegate.getDetail = getDetail
+        tableView.delegate = dataSourceDelegate
+        tableView.dataSource = dataSourceDelegate
+        tableView.register(CountryCell.self, forCellReuseIdentifier: CountryCell.id)
+        tableView.register(CountryInformationCell.self, forCellReuseIdentifier: CountryInformationCell.id)
+        tableView.register(MapHeader.self, forHeaderFooterViewReuseIdentifier: MapHeader.id)
+    }
+    
+    func updateContent(state: State) {
+        switch state {
+        case .error, .loading:
+            self.tableView.isHidden = true
+        case .read:
+            self.tableView.isHidden = false
+            self.tableView.reloadData()
+        }
     }
 }

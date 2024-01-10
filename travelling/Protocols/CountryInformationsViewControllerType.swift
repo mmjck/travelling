@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import UIKit
+
 protocol CountryInformationsViewControllerType where Self: UIViewController {
     func updateViewName(with name: String)
     func show(with state: State)

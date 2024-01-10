@@ -13,7 +13,8 @@ final class CountryInformationsViewController: UIViewController {
     private let presenter: CountryInformationsPresenterType
     
     
-    init(contentView: CountryInformationViewType = CountryInformationView(), presenter: CountryInformationsPresenterType) {
+    init(contentView: CountryInformationViewType = CountryInformationView(),
+         presenter: CountryInformationsPresenterType) {
         self.contentView = contentView
         self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
@@ -34,6 +35,14 @@ final class CountryInformationsViewController: UIViewController {
         
         bindViewActions()
         presenter.requestContryInformations()
+    }
+    
+    private func bindViewActions(){
+        contentView.getLocation = presenter.location
+        contentView.getTitle = presenter.title
+        contentView.getDetail = presenter.subtitle
+        
+        contentView.setupTableView()
     }
     
 }
